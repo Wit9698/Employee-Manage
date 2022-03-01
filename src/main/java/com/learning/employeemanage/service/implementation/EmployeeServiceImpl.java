@@ -5,12 +5,16 @@ import com.learning.employeemanage.model.Employee;
 import com.learning.employeemanage.repository.EmployeeRepo;
 import com.learning.employeemanage.service.EmployeeService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
 
-import java.util.Collection;
+
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.UUID;
 
 @RequiredArgsConstructor
+@Service
+@Transactional
 public class EmployeeServiceImpl implements EmployeeService {
     private final EmployeeRepo employeeRepo;
 

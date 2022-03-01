@@ -13,7 +13,8 @@ import java.util.List;
 @RequestMapping("/employee")
 @RequiredArgsConstructor
 public class EmployeeResource {
-    private EmployeeServiceImpl employeeService;
+
+    private final EmployeeServiceImpl employeeService;
 
 
     @GetMapping("/all")
