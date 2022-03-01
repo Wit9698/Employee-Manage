@@ -1,5 +1,6 @@
 package com.learning.employeemanage.service.implementation;
 
+import com.learning.employeemanage.exception.UserNotFoundException;
 import com.learning.employeemanage.model.Employee;
 import com.learning.employeemanage.repository.EmployeeRepo;
 import com.learning.employeemanage.service.EmployeeService;
@@ -27,7 +28,8 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public Employee getEmployee(Long id) {
-        return null;
+        return employeeRepo.findById(id)
+                .orElseThrow(() -> new UserNotFoundException("User by id " + id + " was not found"));
     }
 
     @Override
